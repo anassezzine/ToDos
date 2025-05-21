@@ -1,0 +1,49 @@
+# Node (React frontend)
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.next/
+frontend/.vite/
+
+# Laravel backend
+backend/vendor/
+backend/node_modules/
+backend/public/storage
+backend/storage/*.key
+backend/storage/app/public
+backend/storage/framework/*
+backend/storage/logs/*
+backend/bootstrap/cache/*
+
+# Laravel env file
+backend/.env
+
+# SQLite / local DB files (if used)
+backend/database/*.sqlite
+
+# OS/Editor specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Composer PHAR (if downloaded locally)
+composer.phar
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs
+.vscode/
+.idea/
+
+# Docker (optional - if using volumes, etc.)
+*.pid
+docker-compose.override.yml

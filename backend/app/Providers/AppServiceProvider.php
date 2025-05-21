@@ -4,9 +4,15 @@ namespace App\Providers;
 
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\ServiceProvider;
+use App\Models\Todo;
+use App\Policies\TodoPolicy;
+
 
 class AppServiceProvider extends ServiceProvider
 {
+    protected $policies = [
+        Todo::class => TodoPolicy::class,
+    ];
     /**
      * Register any application services.
      */

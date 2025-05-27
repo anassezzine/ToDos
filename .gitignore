@@ -1,26 +1,18 @@
-# Node (React frontend)
-frontend/node_modules/
-frontend/build/
-frontend/dist/
-frontend/.env
-frontend/.next/
-frontend/.vite/
-
 # Laravel backend
-backend/vendor/
-backend/node_modules/
-backend/public/storage
-backend/storage/*.key
-backend/storage/app/public
-backend/storage/framework/*
-backend/storage/logs/*
-backend/bootstrap/cache/*
+vendor/
+node_modules/
+public/storage
+storage/*.key
+storage/app/public
+storage/framework/*
+storage/logs/*
+bootstrap/cache/*
 
 # Laravel env file
-backend/.env
+.env
 
 # SQLite / local DB files (if used)
-backend/database/*.sqlite
+database/*.sqlite
 
 # OS/Editor specific
 .DS_Store
@@ -47,3 +39,6 @@ pnpm-debug.log*
 # Docker (optional - if using volumes, etc.)
 *.pid
 docker-compose.override.yml
+
+/public/build
+

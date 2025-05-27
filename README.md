@@ -1,116 +1,87 @@
-```md
-# ToDos Fullstack App
+````markdown
+# ✅ Laravel ToDo App
 
-Ce projet est une application fullstack Laravel + React avec PostgreSQL comme base de données.  
-Il utilise GraphQL pour la communication API et une architecture en monorepo (`/frontend` + `/backend`).
+Une application web simple de gestion de tâches (ToDo) développée avec **Laravel**, **Blade**, **Tailwind CSS** et le système d’**authentification Laravel Breeze**.
 
----
+## 📦 Fonctionnalités
 
-## 📁 Structure du projet
+- Authentification (inscription, connexion, déconnexion)
+- Ajout, affichage et suppression de tâches
+- Tâches associées à chaque utilisateur (sécurisées)
+- Interface responsive avec Tailwind CSS
+- Architecture propre et organisée (routes, contrôleurs, requêtes)
 
-```
+## 🚀 Installation
 
-ToDos/
-├── backend/        → Application Laravel (API + Auth)
-├── frontend/       → Application React 
-├── data/           → (optionnel) Docker/PostgreSQL config si utilisée
-└── README.md
-
-````
-
----
-
-## ⚙️ Prérequis
-
-- PHP ≥ 8.2
-- Composer ≥ 2.x
-- Node.js ≥ 18
-- Docker (si vous utilisez PostgreSQL en container)
-- PostgreSQL ≥ 14 (installé localement **ou** via Docker)
-
----
-
-## 🚀 Installation (Backend Laravel)
-
-1. **Cloner le projet** :
-
-   ```bash
-   git clone https://github.com/anassezzine/ToDos.git
-   cd ToDos/backend
-````
-
-2. **Installer les dépendances PHP** :
-
-   ```bash
-   composer install
-   ```
-
-3. **Copier le fichier `.env`** :
-
-   ```bash
-   cp .env.example .env
-   ```
-
-4. **Configurer la base de données** dans `.env` :
-
-   Exemple avec PostgreSQL (via Docker) :
-
-   ```env
-   DB_CONNECTION=pgsql
-   DB_HOST=127.0.0.1
-   DB_PORT=5432
-   DB_DATABASE=todo_app
-   DB_USERNAME=postgres
-   DB_PASSWORD=password
-   ```
-
-5. **Générer la clé de l'application** :
-
-   ```bash
-   php artisan key:generate
-   ```
-
-6. **Exécuter les migrations** :
-
-   ```bash
-   php artisan migrate
-   ```
-
----
-
-## 🐳 Utilisation de Docker pour PostgreSQL
-
-Si vous utilisez Docker, assurez-vous que le container PostgreSQL est en cours d’exécution :
+### 1. Cloner le projet
 
 ```bash
-docker ps
-```
+git clone https://github.com/ton-compte/ton-repo.git
+cd ton-repo/backend
+````
 
-> Le port `5432` doit être exposé (voir colonne "PORTS").
-> Si aucun container n’est présent, vous pouvez créer un `docker-compose.yml`.
-
----
-
-## 🔐 Authentification API
-
-Le projet utilise **Laravel Breeze** en mode API :
+### 2. Installer les dépendances PHP et JS
 
 ```bash
-composer require laravel/breeze --dev
-php artisan breeze:install api
+composer install
+npm install
+```
+
+### 3. Configuration de l'environnement
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+⚠️ Configure ta base de données dans le fichier `.env` :
+
+```
+DB_DATABASE=todos
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 4. Migration de la base de données
+
+```bash
 php artisan migrate
 ```
 
-Cela ajoute les routes suivantes :
+### 5. Compiler les assets
 
-* `POST /api/register`
-* `POST /api/login`
-* `GET /api/user` (avec token Bearer)
+```bash
+npm run dev
+```
 
----
+### 6. Lancer le serveur de développement
 
-## ✍️ Auteur
+```bash
+php artisan serve
+```
 
-* [Anass Ezzine](https://github.com/anassezzine)
+## 🔐 Authentification
+
+Utilise Laravel Breeze pour gérer :
+
+* Inscription
+* Connexion
+* Email vérifié (optionnel)
+
+Pour activer la vérification email, assure-toi d’avoir configuré `MAIL_MAILER` dans `.env`.
+
+
+## 🗂️ Structure du projet
+
+* `app/Http/Controllers/Web` : contrôleurs web (interface Blade)
+* `resources/views/todos` : vues Blade
+* `routes/web.php` : routes principales
+* `app/Http/Requests` : requêtes de validation
+* `app/Models/Todo.php` : modèle Eloquent
+
+
+## 🤝 Contribuer
+
+Les contributions sont les bienvenues ! Fork le projet, crée une branche, et propose une PR.
 
 ```

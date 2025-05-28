@@ -84,4 +84,6 @@ Pour activer la vérification email, assure-toi d’avoir configuré `MAIL_MAILE
 
 Les contributions sont les bienvenues ! Fork le projet, crée une branche, et propose une PR.
 
+![img.png](img.png)
+
 ```
